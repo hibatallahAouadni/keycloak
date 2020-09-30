@@ -1,0 +1,22 @@
+{
+    "name": "keycloak",
+    "version": "0.0.83",
+    "description": "Front-End web starter kit webpack",
+    "scripts": {
+        "init-pre-commit": "cp pre-commit .git/hooks/pre-commit",
+        "container-stop": "docker stop smtp4dev gio_apim_mongodb gio_apim_elasticsearch gio_keycloak gio_apim_gateway gio_apim_management_api gio_apim_management_ui gio_apim_portal_ui",
+        "container-rm": "docker rm smtp4dev gio_apim_mongodb gio_apim_elasticsearch gio_keycloak gio_apim_gateway gio_apim_management_api gio_apim_management_ui gio_apim_portal_ui",
+        "docker-down": "npm run container-stop && npm run container-rm",
+        "docker-up": "docker-compose up",
+        "docker-dev": "SET DEVELOPPER=%USERNAME%&& npm run docker-down && npm run docker-up"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:hibatallahAouadni/keycloak.git"
+    },
+    "keywords": [
+        "SiFAST"
+    ],
+    "author": "Hibatallah Aouadni",
+    "license": "ISC"
+}
