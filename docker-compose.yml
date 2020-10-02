@@ -83,7 +83,7 @@ services:
     image: jboss/keycloak
     container_name: gio_keycloak
     ports:
-      - "9086:8086"
+      - "8086:8080"
     environment:
       - KEYCLOAK_USER=admin
       - KEYCLOAK_PASSWORD=admin
@@ -96,7 +96,7 @@ services:
     container_name: gio_apim_gateway
     restart: always
     ports:
-      - "9092:8082"
+      - "8082:8082"
     depends_on:
       - mongodb
       - elasticsearch
@@ -115,7 +115,7 @@ services:
     container_name: gio_apim_management_api
     restart: always
     ports:
-      - "9093:8083"
+      - "8083:8083"
     links:
       - mongodb
       - elasticsearch
@@ -136,7 +136,7 @@ services:
     container_name: gio_apim_management_ui
     restart: always
     ports:
-      - "9084:8084"
+      - "8084:8080"
     depends_on:
       - management_api
     environment:
@@ -151,7 +151,7 @@ services:
     container_name: gio_apim_portal_ui
     restart: always
     ports:
-      - "9085:8085"
+      - "8085:8080"
     depends_on:
       - management_api
     environment:
